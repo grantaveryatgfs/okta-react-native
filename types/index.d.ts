@@ -69,6 +69,7 @@ export namespace Okta {
     httpReadTimeout?: number;
     browserMatchAll?: boolean;
     oktaAuthConfig?: OktaAuthOptions;
+    acr_values?: string;
   }
 
   interface AuthenticationResponse {
@@ -92,6 +93,7 @@ export namespace Okta {
     noSSO?: boolean;
     login_hint?: string
     prompt?: string
+    acr_values?: string;
   }
 
   interface StringAnyMap {

@@ -279,6 +279,11 @@ export const signInWithBrowser = async(options = {}) => {
     options.noSSO = options.noSSO.toString();
   }
 
+  // If acr_values is not set in options, check config (default)
+  if (!options.acr_values && authClient && authClient.options && authClient.options.acr_values) {
+    options.acr_values = authClient.options.acr_values;
+  }
+
   return NativeModules.OktaSdkBridge.signIn(options);
 };
 
